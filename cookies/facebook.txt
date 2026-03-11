@@ -1,8 +1,18 @@
 # Netscape HTTP Cookie File
-# এই file এ তোমার Facebook cookies paste করো
-#
-# কীভাবে পাবে:
-# 1. Chrome/Firefox এ "Get cookies.txt LOCALLY" extension install করো
-# 2. facebook.com এ login করো
-# 3. Extension এ click করো → "Export" → "facebook.com"
-# 4. Download হওয়া file এর সব content এখানে paste করো
+# https://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file! Do not edit.
+
+.facebook.com	TRUE	/	TRUE	1807767381	datr	Vf-waQA5X00g3yq8_M17HHzi
+.facebook.com	TRUE	/	TRUE	1807767382	ps_l	1
+.facebook.com	TRUE	/	TRUE	1807767382	ps_n	1
+.facebook.com	TRUE	/	TRUE	1807767672	sb	Vf-wadv3RSSz5CDfp7FW8xav
+.facebook.com	TRUE	/	TRUE	0	m_pixel_ratio	2
+.facebook.com	TRUE	/	TRUE	0	wd	360x800
+.facebook.com	TRUE	/	TRUE	1804743672	c_user	61571810340997
+.facebook.com	TRUE	/	TRUE	1804743672	xs	21%3Aw3c8B4xo2VQCVA%3A2%3A1773207668%3A-1%3A-1
+.facebook.com	TRUE	/	TRUE	1773812489	locale	en_GB
+.facebook.com	TRUE	/	TRUE	1807767885	pas	61571810340997%3AOheAFBqNX8
+.facebook.com	TRUE	/	TRUE	1778391886	vpd	v1%3B671x360x2
+.facebook.com	TRUE	/	TRUE	1780983885	fr	08ktcjBgEneZWFkTb.AWcfGiMqw4HICLSxtsY94AhE9C0aF7_o1a2WElRTNdpLeynV6tM.BpsP9V..AAA.0.0.BpsQFM.AWdqlQm6dn4mRArMpyfyD3fy5fg
+.facebook.com	TRUE	/	TRUE	1804743886	fbl_st	101421147%3BT%3A29553464
+.facebook.com	TRUE	/	TRUE	1780983886	wl_cbv	v2%3Bclient_version%3A3109%3Btimestamp%3A1773207884
