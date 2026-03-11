@@ -1,6 +1,6 @@
-$)C# SnapLoad API
+# SnapLoad API
 
-Social Media Downloader API  YouTube, TikTok, Instagram, Facebook  
+Social Media Downloader API — YouTube, TikTok, Instagram, Facebook  
 Powered by yt-dlp + ffmpeg. Hosted on Fly.io.
 
 ---
@@ -56,7 +56,7 @@ fly auth login
 ```bash
 fly apps create snapload-api
 ```
->   taken     , fly.toml    
+> যদি নাম taken থাকে তাহলে অন্য নাম দাও, fly.toml এও সেই নাম দাও।
 
 ### 4. Deploy
 ```bash
@@ -76,16 +76,16 @@ fly open
 
 ---
 
-## Update  
+## Update করতে হলে
 
-Code change  :
+Code change করার পর:
 ```bash
 fly deploy
 ```
 
 ---
 
-## Local   
+## Local এ চালাতে হলে
 
 ```bash
 # Requirements
@@ -107,12 +107,3 @@ npm start
 - TikTok
 - Instagram (post, reel, story)
 - Facebook (video, reel)
-##Devoloper info
-
-- Name : Maim islam
-- Religion : Muslim 
-- Age :19
-- Blood Group :B+
-- Study : Depolma engineer
-- Status : Single
-- Im Cyber Exparte 
