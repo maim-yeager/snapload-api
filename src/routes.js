@@ -15,6 +15,7 @@ const {
   detectPlatform,
   getYtDlp,
   getFfmpeg,
+  getCookiesFile,
 } = require("./ytdlp");
 
 const router = express.Router();
@@ -25,12 +26,20 @@ router.get("/health", (req, res) => {
   const ytdlp  = getYtDlp();
   const ffmpeg = getFfmpeg();
 
+  const cookies = {
+    youtube:   !!getCookiesFile("youtube"),
+    instagram: !!getCookiesFile("instagram"),
+    facebook:  !!getCookiesFile("facebook"),
+    tiktok:    !!getCookiesFile("tiktok"),
+  };
+
   res.json({
     success:   true,
     message:   "SnapLoad API is running",
     timestamp: new Date().toISOString(),
     yt_dlp:  { available: !!ytdlp,  path: ytdlp  || null },
     ffmpeg:  { available: !!ffmpeg, path: ffmpeg || null },
+    cookies,
     supported: ["youtube", "youtube_playlist", "tiktok", "instagram", "facebook"],
   });
 });
@@ -54,7 +63,14 @@ router.post("/extract", async (req, res) => {
     const data = await extract(trimmed);
     return res.json({ success: true, platform, data });
   } catch (err) {
-    return res.status(422).json({ success: false, platform, error: err.message });
+    const msg = err.message || "Extraction failed";
+    // Determine HTTP status based on error type
+    let status = 422;
+    const m = msg.toLowerCase();
+    if (m.includes("private") || m.includes("login") || m.includes("sign in")) status = 403;
+    else if (m.includes("not found") || m.includes("deleted") || m.includes("404")) status = 404;
+    else if (m.includes("rate limit") || m.includes("429")) status = 429;
+    return res.status(status).json({ success: false, platform, error: msg });
   }
 });
 
