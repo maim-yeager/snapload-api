@@ -17,6 +17,31 @@ const crypto = require("crypto");
 const TMP_DIR = path.join(os.tmpdir(), "snapload");
 if (!fs.existsSync(TMP_DIR)) fs.mkdirSync(TMP_DIR, { recursive: true });
 
+// ─── Cookies directory ────────────────────────────────────────────────────────
+// Place platform cookies files here:
+//   cookies/youtube.txt
+//   cookies/instagram.txt
+//   cookies/facebook.txt
+//   cookies/tiktok.txt
+//
+// Format: Netscape/Mozilla cookies.txt (exported from browser extension)
+// Extension: "Get cookies.txt LOCALLY" (Chrome/Firefox)
+const COOKIES_DIR = path.join(process.cwd(), "cookies");
+
+function getCookiesFile(platform) {
+  const map = {
+    youtube:          "youtube.txt",
+    youtube_playlist: "youtube.txt",
+    instagram:        "instagram.txt",
+    facebook:         "facebook.txt",
+    tiktok:           "tiktok.txt",
+  };
+  const filename = map[platform];
+  if (!filename) return null;
+  const filepath = path.join(COOKIES_DIR, filename);
+  return fs.existsSync(filepath) ? filepath : null;
+}
+
 // ─── Resolve binaries ─────────────────────────────────────────────────────────
 
 function resolveBin(name) {
@@ -73,20 +98,21 @@ const BASE = [
   "--geo-bypass",
   "--geo-bypass-country", "US",
   "--socket-timeout",     "30",
-  "--retries",            "5",
-  "--fragment-retries",   "5",
+  "--retries",            "8",
+  "--fragment-retries",   "8",
   "--concurrent-fragments", "4",
   "--add-header", "Accept-Language:en-US,en;q=0.9",
+  "--add-header", "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 ];
 
 // ─── Per-platform extra args ──────────────────────────────────────────────────
-// Key: use mobile UA for Instagram/TikTok (avoids bot detection)
 
 function platformArgs(platform) {
   switch (platform) {
     case "youtube":
       return [
-        "--extractor-args", "youtube:player_client=android,web",
+        "--extractor-args", "youtube:player_client=android,ios,web",
+        "--add-header", "User-Agent:com.google.android.youtube/19.09.37 (Linux; U; Android 11) gzip",
       ];
 
     case "tiktok":
@@ -101,12 +127,14 @@ function platformArgs(platform) {
         "--add-header", "User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
         "--add-header", "Referer:https://www.instagram.com/",
         "--add-header", "X-IG-App-ID:936619743392459",
+        "--add-header", "X-ASBD-ID:129477",
       ];
 
     case "facebook":
       return [
         "--add-header", "User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "--add-header", "Referer:https://www.facebook.com/",
+        "--add-header", "sec-fetch-site:same-origin",
       ];
 
     default:
@@ -267,11 +295,16 @@ async function extract(url) {
     }
   }
 
+  const cookiesFile = getCookiesFile(platform);
+  const cookiesArgs = cookiesFile ? ["--cookies", cookiesFile] : [];
+  if (cookiesFile) console.log(`[extract] Using cookies: ${cookiesFile}`);
+
   const args = [
     ...BASE,
     "--dump-json",
     "--quiet",
     ...platformArgs(platform),
+    ...cookiesArgs,
     url,
   ];
 
@@ -320,6 +353,12 @@ async function downloadMerged(url, quality) {
     // No ffmpeg — force pre-merged single file
     args[args.indexOf("--format") + 1] =
       "best[ext=mp4]/best[vcodec^=avc1]/best[vcodec^=avc]/best";
+  }
+
+  const cookiesFile = getCookiesFile(platform);
+  if (cookiesFile) {
+    args.push("--cookies", cookiesFile);
+    console.log(`[download] Using cookies: ${cookiesFile}`);
   }
 
   args.push(...platformArgs(platform), url);
@@ -459,4 +498,5 @@ module.exports = {
   validateUrl,
   getYtDlp,
   getFfmpeg,
+  getCookiesFile,
 };
