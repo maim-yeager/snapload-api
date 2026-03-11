@@ -1,0 +1,12 @@
+# Netscape HTTP Cookie File
+# এই file এ তোমার YouTube cookies paste করো
+#
+# কীভাবে পাবে:
+# 1. Chrome/Firefox এ "Get cookies.txt LOCALLY" extension install করো
+# 2. youtube.com এ login করো
+# 3. Extension এ click করো → "Export" → "youtube.com"
+# 4. Download হওয়া file এর সব content এখানে paste করো
+#
+# উদাহরণ format (এই line গুলো মুছে দাও, আসল cookies দাও):
+# .youtube.com	TRUE	/	TRUE	1999999999	CONSENT	YES+
+# .youtube.com	TRUE	/	FALSE	1999999999	SID	xxxxx

@@ -1,0 +1,8 @@
+# Netscape HTTP Cookie File
+# এই file এ তোমার TikTok cookies paste করো
+#
+# কীভাবে পাবে:
+# 1. Chrome/Firefox এ "Get cookies.txt LOCALLY" extension install করো
+# 2. tiktok.com এ login করো
+# 3. Extension এ click করো → "Export" → "tiktok.com"
+# 4. Download হওয়া file এর সব content এখানে paste করো
