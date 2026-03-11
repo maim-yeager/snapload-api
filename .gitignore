@@ -4,3 +4,8 @@ node_modules/
 .DS_Store
 bin/
 tmp/
+
+# Cookies — NEVER commit to GitHub (security risk)
+# Upload manually to server via Fly.io secrets or direct file copy
+cookies/*.txt
+!cookies/youtube.txt.example
