@@ -1,12 +1,25 @@
 # Netscape HTTP Cookie File
-# এই file এ তোমার YouTube cookies paste করো
-#
-# কীভাবে পাবে:
-# 1. Chrome/Firefox এ "Get cookies.txt LOCALLY" extension install করো
-# 2. youtube.com এ login করো
-# 3. Extension এ click করো → "Export" → "youtube.com"
-# 4. Download হওয়া file এর সব content এখানে paste করো
-#
-# উদাহরণ format (এই line গুলো মুছে দাও, আসল cookies দাও):
-# .youtube.com	TRUE	/	TRUE	1999999999	CONSENT	YES+
-# .youtube.com	TRUE	/	FALSE	1999999999	SID	xxxxx
+# https://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file! Do not edit.
+
+.youtube.com	TRUE	/	TRUE	1773210001	GPS	1
+.youtube.com	TRUE	/	TRUE	1807768412	PREF	tz=Asia.Dhaka
+.youtube.com	TRUE	/	TRUE	1804744409	__Secure-1PSIDTS	sidts-CjQBBj1CYhdtqumpTMkX8BQhcvuP014fgoMQRsL4thcv6slcAyTG70SY6AvDixY5vTZPtAELEAA
+.youtube.com	TRUE	/	TRUE	1804744409	__Secure-3PSIDTS	sidts-CjQBBj1CYhdtqumpTMkX8BQhcvuP014fgoMQRsL4thcv6slcAyTG70SY6AvDixY5vTZPtAELEAA
+.youtube.com	TRUE	/	FALSE	1807768409	HSID	AewIGuFWdiNNl6_tG
+.youtube.com	TRUE	/	TRUE	1807768409	SSID	AxUKvCDacQ7Bodtrq
+.youtube.com	TRUE	/	FALSE	1807768409	APISID	21qMrzujxJA7JOFS/AlH_48JR-xA4sJoQY
+.youtube.com	TRUE	/	TRUE	1807768409	SAPISID	LSbc6TqLLQAHpJOm/AGf_nefOlq2zs0ycg
+.youtube.com	TRUE	/	TRUE	1807768409	__Secure-1PAPISID	LSbc6TqLLQAHpJOm/AGf_nefOlq2zs0ycg
+.youtube.com	TRUE	/	TRUE	1807768409	__Secure-3PAPISID	LSbc6TqLLQAHpJOm/AGf_nefOlq2zs0ycg
+.youtube.com	TRUE	/	FALSE	1807768409	SID	g.a0007ghaxrgELaIS6kEqAMowK0JbWyET05Ko_R_200EYIbMcKdvl-3nW2DCYAvOfH7jZuETYHQACgYKAdASARESFQHGX2Mil3HoJfWCedcZBuZiXYx7UhoVAUF8yKpIdWjskH5-Xye5mSVG5sy70076
+.youtube.com	TRUE	/	TRUE	1807768409	__Secure-1PSID	g.a0007ghaxrgELaIS6kEqAMowK0JbWyET05Ko_R_200EYIbMcKdvlzm4x0bYhOxmA1KIoYhzLxAACgYKAZASARESFQHGX2Miu1Ylc7rhgQDQQEvbuwpIfhoVAUF8yKpCmRTJoQHkKYlUb1sRuh370076
+.youtube.com	TRUE	/	TRUE	1807768409	__Secure-3PSID	g.a0007ghaxrgELaIS6kEqAMowK0JbWyET05Ko_R_200EYIbMcKdvl0HVfUpDQ0gLO2H_Y0tgDqQACgYKASwSARESFQHGX2MiLh9p8TFrDU_eYpzXW84Q6RoVAUF8yKrUoJNhn1fOBaLYRCeT-7q20076
+.youtube.com	TRUE	/	TRUE	1807768411	LOGIN_INFO	AFmmF2swRQIhAK8KvMIFTeiiCWQfTmmgDNQBqBTNuy6d5cBk7Jj48F1PAiAVc7wym9vpwVi8Wyy7cg767NmUyyXYPVod2GoZ70G0gg:QUQ3MjNmempRSFJHckNfQUZKbzFtNl9tQkNsblJCNmNRRnRZbkFBaUZ4NTlDZy1GREU2YzBRM3lTVmlfQnZFbUt2VU00WVZ3Z09RNXZ5TVQtNlpwUGxIeGZWV3V6RVZvNkRjaWVFX2IycEsxQ3NuX24xN2pvUUpTUS1wa2RIVUs4WFBWOXZ6d0MybjJndFhZbEhhazBoU0RpVU80Y2ViU0lB
+.youtube.com	TRUE	/	FALSE	1804744416	SIDCC	AKEyXzUQHb1a_OuB_ytbyH42QIVgIV1WqZD-bF43fWnvN2KTdGpuKCTqMRvKkvupKx0I6oO75w
+.youtube.com	TRUE	/	TRUE	1804744416	__Secure-1PSIDCC	AKEyXzWfNTOMuIGFAtzA45yu3uta4SOVoRHCbwCybiUpoksRInvWFoZSc_ImIRCb4anUPMBjvw
+.youtube.com	TRUE	/	TRUE	1804744416	__Secure-3PSIDCC	AKEyXzUqSYckJ9YOGsk-AKdIuasJVyKPUjhe8by4zwdWNcyxKrVSQQCJHL8UdpEvNIJsFRjvoQ
+.youtube.com	TRUE	/	TRUE	0	YSC	33EH8WhhqPk
+.youtube.com	TRUE	/	TRUE	1788760411	VISITOR_INFO1_LIVE	rMgeB_whSiQ
+.youtube.com	TRUE	/	TRUE	1788760411	VISITOR_PRIVACY_METADATA	CgJCRBIEGgAgTA%3D%3D
+.youtube.com	TRUE	/	TRUE	1788760341	__Secure-ROLLOUT_TOKEN	CKfutaqK3JbyvwEQhd2-p5OXkwMYx9iT6pOXkwM%3D
